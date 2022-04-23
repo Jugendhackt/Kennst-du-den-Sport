@@ -28,7 +28,12 @@ def fragenvon(kategorie):
         quizfragen = fragenvon("")
     UpdatedList = random.sample(quizfragen, 10)
     return UpdatedList
-print(fragenvon("Golf"))
- 
 
-    
+
+def allekategorien():
+    moeglichkeiten=[]
+    for row in cur.execute('SELECT DISTINCT Kategorie from Fragen'):
+        kategorie=row[0]
+        moeglichkeiten.append(kategorie)
+    return moeglichkeiten
+
