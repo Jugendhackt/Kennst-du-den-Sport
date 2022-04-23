@@ -3,7 +3,7 @@
     box-shadow: 4px 4px 8px black;
      Padding: 20px; margin-top:50px;
       border-radius: 15px 15px 15px 15px;
-       border: 1px; Height: 300px; Width: 250px; margin right: ; auto; text-align: center; 
+       border: 1px; Height: 300px; Width: 250px; margin-right: ; auto; text-align: center; 
 }
 
 .website{
@@ -33,5 +33,14 @@ justify-content: center;
   background-color: rgb(55, 163, 199);
 }
 .button{
-  
+  width: 30cm;
+  height: 2cm;
+  background-color: rgb(55, 163, 199);
+}
+.button1{
+  display: flex;
+  justify-content: center;
+}
+.font{
+  font-size: 1cm;
 }
