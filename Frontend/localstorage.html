@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem('Hallo sagen', 'Hallo Jugendhackt')
+
+
+
+
+        for (let i=0, iC=localStorage.length; i<iC; ++i) { 
+    let storageKey = localStorage.key(i);
+    console.log(storageKey + ' : ' + localStorage.getItem(storageKey) );
+}
+    </script>
+</body>
+</html>

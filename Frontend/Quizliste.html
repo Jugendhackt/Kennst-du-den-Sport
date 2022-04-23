@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kennst du den Sport?</title>
     <link rel="stylesheet" href="/Frontend/CSS/main.css">
+    <link rel="icon" type="image" sizes="16x16" href="/Frontend/image/balle-sport.png">
 </head>
 <body>
     <div class="button1">
         <button  class="button font" onclick="window.location.href = 'Fußball.html'">Fußball-Quiz</button>
+        <button  class="button font" onclick="window.location.href = 'Vollyball.html'">Vollyball-Quiz</button>
     </div>
+    <script>
+
+        for (let i=0, iC=localStorage.length; i<iC; ++i) { 
+            let storageKey = localStorage.key(i);
+            let a = storageKey + ' , ' + localStorage.getItem(storageKey)
+           console.log( a);
+              document.querySelector('.button1').innerHTML = a ;
+
+        }
+     
+        
+        </script>
 </body>
 </html>

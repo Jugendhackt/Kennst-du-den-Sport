@@ -28,9 +28,11 @@ justify-content: center;
 .img{
   display: flex;
   justify-content: center;
+  
 }
 .backroundcolor{
-  background-color: rgb(55, 163, 199);
+  
+  
 }
 .button{
   width: 30cm;
@@ -39,8 +41,5 @@ justify-content: center;
 }
 .button1{
   display: flex;
-  justify-content: center;
-}
-.font{
-  font-size: 1cm;
+  justify-content:;
 }
