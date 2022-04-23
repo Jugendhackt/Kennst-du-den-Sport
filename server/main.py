@@ -7,7 +7,7 @@ import bottle
 @bottle.route("/")
 def index():
     with open("static/index.html") as file:
-        return file.read()
+        return bottle.template(file.read(),kategorien="")
 
 @bottle.route("/init")
 @bottle.route("/init/")
@@ -17,7 +17,8 @@ def init():
         kategorie=bottle.request.query.kategorie
     else:
         kategorie="allgemein"
-    return "Hier ist die /init Seite"+kategorie
+    with open("static/init.html") as file:
+        return bottle.template(file.read(),datensatz="")
 
 
 @bottle.route("/frage")
@@ -37,6 +38,7 @@ def ergebnis():
 @bottle.route("/ergebnis/<n>")
 @bottle.route("/ergebnis/<n>/")
 def ergebnis(n="n"):
-    return bottle.template("Hier ist die{{n}} /ergebnis Seite",n=n)
+    with open("static/ergebnis-detail.html") as file:
+        return bottle.template(file.read(),n=n)
 
 bottle.run(host="localhost", port=8080, debug=True)
