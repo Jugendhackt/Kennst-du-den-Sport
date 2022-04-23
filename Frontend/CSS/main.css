@@ -21,6 +21,7 @@ header
   Height: 300px; 
   Width: 250px;
   text-align: center; 
+  margin: auto;
 }
 
 .absende-button
