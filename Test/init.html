@@ -9,9 +9,10 @@
 <body>
     <script>
     
-        var daten = {{datenstring}}
+        var daten = {{datensatz}}
         var jsondaten =  JSON.parse(daten)
-        console.log(jsondaten)
+        localStorage.setItem('unbeantwortet',jsondaten) 
+        localStorage.setItem('beantwortet',[])
         window.location.replace("/frage")
     </script>
 </body>

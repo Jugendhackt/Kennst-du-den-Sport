@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 id="fragetext">H</h1>
+  <input onclick="gecklickt(1);" id="a1" type="radio" name="dog" value="Dalmatiner"> Dalmatiner<br> 
+<input onclick="gecklickt(2);" id="b1" type="radio" name="dog" value="Rottweiler"> Rottweiler<br>
+<input onclick="gecklickt(3);" id="c1" type="radio" name="dog" value="Dalmatiner"> Dalmatiner<br> 
+<input onclick="gecklickt(4);" id="d1" type="radio" name="dog" value="Rottweiler"> Rottweiler<br>
+<button onclick="weiter();">Weiter</button>	
+<script>
+
+ for (let i=0, iC=localStorage.length; i<iC; ++i) { 
+            let storageKey = localStorage.key(i);
+            let a = storageKey + ' , ' + localStorage.getItem(storageKey)
+           console.log( a);
+              document.querySelector('.button1').innerHTML = a ;
+
+        }
+
+var unbeantwortet = localStorage.getItem(unbeantwortet);
+var aktullefrage = localStorage;
+function weiter() {
+    if (unbeantwortet.length == 0){
+        window.location.replace("/ergebnis")
+    } else{
+        window.location.replace("/frage")
+    }
+}
+function gecklickt(nummber){
+    document.getElementById("a1").disabled = true;
+    document.getElementById("b1").disabled = true;
+    document.getElementById("c1").disabled = true;
+    document.getElementById("d1").disabled = true;
+
+
+
+    
+    let data = {
+        correct : "11",
+        answers : [
+            "12",
+            "11",
+            "24",
+            "6"
+        ],
+
+        };
+
+        function myFunction(elmnt) 
+        { 
+            (data.answers[1]);
+            localStorage.setItem(elmnt)
+            let gedrueckt = elmnt.textContent;
+            if (data.correct == gedrueckt){
+                localStorage.setItem("erfolg");
+                clr = 'green';}
+            else{
+                localStorage.setItem("leider falsch");
+                clr = 'red';}
+            
+            elmnt.style.color = clr;
+        
+            element = document.querySelector('input[id="a1"]:checked');
+        }
+
+}
+</script>
+</body>
+</html>
