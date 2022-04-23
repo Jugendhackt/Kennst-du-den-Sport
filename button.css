@@ -6,7 +6,7 @@
        border: 1px; Height: 300px; Width: 250px; margin right: ; auto; text-align: center; 
 }
 
-.website1{
+.website{
 display: flex;
 justify-content: center;
 }
@@ -19,4 +19,19 @@ justify-content: center;
 .java{
   height: 1cm;
   width: 3cm;
+}
+.quizliste{
+  width: 3cm;
+  height: 1cm;
+  background-color: rgb(55, 163, 199);
+}
+.img{
+  display: flex;
+  justify-content: center;
+}
+.backroundcolor{
+  background-color: rgb(55, 163, 199);
+}
+.button{
+  
 }
