@@ -17,22 +17,29 @@ def index():
    
 </head>
 <body>
-<p id = "x"> Hallo</p>
-   <script> const Http = new XMLHttpRequest();
-   const url= "127.0.0.1:8080/init";
-Http.open("GET", url);
-Http.send()
-Http.onreadystatechange=function(){
-    if(this.readyState==4 && this.status==200){
- document.querySelector('#x').element.innerHTML = Http.responseText;
-    }
-}
-</script>
+<p id = "x">weitergekommen!</p>
+
 </body>
 </html>"""
 
 @bottle.route("/init")
 @bottle.route("/init/")
 def init():
-    return "Hier ist die /init Seite"
+    return bottle.template("""
+    <html>
+
+    <body>
+
+    <script>
+
+    var daten = {{ datenstring }};
+window.location.replace("/");
+    </script>
+
+
+    </body>
+
+    </html>
+    """, datenstring = "daten")
+
 bottle.run(host="localhost", port=8080, debug=True)
