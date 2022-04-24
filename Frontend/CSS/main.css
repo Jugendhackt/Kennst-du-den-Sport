@@ -74,3 +74,12 @@ border-radius: 20px;
   width: 40%;
   height: 10%;
 }
+
+.img2{
+width:40%;
+}
+
+.img3{
+  display: flex;
+  justify-content: center;
+}
