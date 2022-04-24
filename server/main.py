@@ -30,7 +30,7 @@ def frage():
 @bottle.route("/main.css")
 @bottle.route("/main.css/")
 def frage():
-    with open("static/main.css.html") as file:
+    with open("static/main.css") as file:
         return file.read()
 
 
