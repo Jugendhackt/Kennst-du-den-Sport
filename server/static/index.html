@@ -13,6 +13,8 @@
     <script>
        window.onload = function () {
         document.sports_kat = LoadCatagories();
+        document.category_list = document.querySelector('.category_list');
+
         WriteToLocalStorage();
         LoadFromLocalStorage();
         PrintButtons();
@@ -39,16 +41,15 @@
         function LoadFromLocalStorage()
         {
             let sports_kat_length = localStorage.getItem('sport_kat_length'); //variable für die länge der Kategorien definieren
-            let category_list = document.querySelector('.category_list');
 
             // console.log("länge der Kat: " + sports_kat_length);
             for (let i=0; i < sports_kat_length; ++i)
             {
                 let kat_name = localStorage.getItem('sports_kat_'+i)
                 // Ausgabe der Kategorien im HTML
-                category_list.innerHTML = category_list.innerHTML + "\n" + `<button  class="button font" onclick="window.location.replace('/init?kategorie=${kat_name}')">${kat_name}</button>`
+                document.category_list.innerHTML = document.category_list.innerHTML + "\n" + `<button  class="button font" onclick="window.location.replace('/init?kategorie=${kat_name}')">${kat_name}</button>`
                 // testweise ausgabe der Kategorien des
-                console.log(`Kategorie ${i}: ${kat_name}`);
+                // console.log(`Kategorie ${i}: ${kat_name}`);
             }
 
         }
@@ -56,14 +57,13 @@
 
         function PrintButtons()
         {
-
             // Ausgabe der Kategorien im HTML
-            //let sports_kat_length = localStorage.getItem('sport_kat_length')  //variable für die länge der Kategorien definieren
+            let sports_kat_length = localStorage.getItem('sport_kat_length')  //variable für die länge der Kategorien definieren
             for (let i=0; i < sports_kat_length; ++i)
             {
                 let kat_name = localStorage.getItem('sports_kat_'+i)
                 // Ausgabe der Kategorien im HTML
-                category_list.innerHTML = category_list.innerHTML + "\n" + `<button  class="button font" onclick="window.location.href = '${kat_name}.html'">${kat_name}</button>`
+                document.category_list.innerHTML = document.category_list.innerHTML + "\n" + `<button  class="button font" onclick="window.location.href = '${kat_name}.html'">${kat_name}</button>`
                 //document.write(`<button  class="button font" onclick="window.location.href = '${kat_name}.html'">${kat_name}</button>`);
             }
         }
@@ -71,23 +71,23 @@
     </script>
 </head>
 <body>
-    
+
     <header>
         <h1>Kennst du den Sport?
             <hr>
         </h1>
     </header>
-    
+
     <div class="category_list">
         <button  class="button font" onclick="window.location.replace('/init')">Alle</button>
     </div>
     <hr>
     <div class="backroundcolor">
-    
+
     <div class="">
         <div class="img">
             <img class="img1"  src="/Frontend/image/Shutterstock_Lisa_Kolbasa.png">
-          
+
         </div>
     </div>
 

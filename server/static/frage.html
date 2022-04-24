@@ -25,9 +25,6 @@
     function PrintQuestion(question)
     {
         document.getElementById("fragetext").innerHTML = question.text;
-
-        console.log(question);
-
         document.getElementById("t1").innerHTML = question.loesung;
         document.getElementById("t2").innerHTML = question.falsch[0];
         document.getElementById("t3").innerHTML = question.falsch[1];
@@ -36,10 +33,10 @@
 
     function LoadFromLocalStorage()
     {
+        let nextQuestion = parseInt(localStorage.getItem('beantwortet'));
         let category_list = document.querySelector('#fragetext').innerHTML = document.unbeantwortet.frage;
-        let question = document.unbeantwortet[0];
+        let question = document.unbeantwortet[nextQuestion];
         return question;
-        console.log(question);
     }
 
 
