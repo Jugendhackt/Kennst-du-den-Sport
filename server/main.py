@@ -1,6 +1,10 @@
 import bottle
 import quizfragen
 import json
+<<<<<<< HEAD
+=======
+
+>>>>>>> 464497436ea27d2656f9937343bc9d49100487ab
 
 
 
@@ -12,7 +16,7 @@ def index():
 @bottle.route("/init")
 @bottle.route("/init/")
 def init():
-    
+
     if "kategorie" in bottle.request.query:
         kategorie=bottle.request.query.kategorie
     else:
