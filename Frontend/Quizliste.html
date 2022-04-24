@@ -16,12 +16,12 @@
     <script>
 
         // definieren der Kategorien
-        var sports_kat = ["Eiskunstlauf", "Cricket", "Golf", "Fu\u00dfball", "Basketball", "Leichtatlethik", "Volleyball"]
+        var sports_kat = ["Eiskunstlauf", "Cricket", "Golf", "Fu\u00dfball", "Basketball", "Leichtatlethik", "Volleyball","Hallo"]
         // console.log(sports_kat);  // debug output
 
 
         // beladen des LocalStorages
-        localStorage.setItem('sport_kat_length', sports_kat.length);
+        localStorage.setItem('sport_kat_length', sports_kat.length); 
         for (let i=0; i < sports_kat.length; ++i)
         {
             localStorage.setItem('sports_kat_'+i, sports_kat[i]);
