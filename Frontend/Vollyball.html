@@ -7,39 +7,77 @@
     <title></title>
  
     <link rel="stylesheet" href="/Frontend/CSS/main.css">
-    
+    <link rel="icon" type="image" sizes="16x16" href="/Frontend/image/balle-sport.png">
 </head>
 <body>
-    <div class="website">
+    <header>
         <h1>Kennst du den Sport?</h1>
-        </div>
-        <div class="box">
+    </header>
+    <div class="box">
         <div class="frage">
-            <h1>Wie viele Personen sind in einem Vollyballteam?</h1> 
-         
-            </div>
-            
-            <div>
-                <button class="java" onclick="myFunction(this, 'red')">A) 11</button>
-                <button class="java" onclick="myFunction(this, 'red')">B) 7</button>
-                <button class="java" onclick="myFunction(this, 'red')">C) 9</button>
-                <button class="java" onclick="myFunction(this, 'lightgreen')">D) 6</button>
-                </div>
-            
-                <div>
-                    <button class="absende-button" onclick="window.location.href = 'Fußball.html'">Weiter </button>
-                </div>
-  
+            <h1>Wie viele Personen sind in einem Volleyballteam?</h1> 
         </div>
-        <script>
-
-            function myFunction(elmnt,clr) {
-            
-             elmnt.style.color = clr;
-            
-            }
-            
-            </script>
+        <div>
+            <div>
+            <input type="radio" id="huey" name="drone" value="huey"onclick="myFunction(document.getElementById('hueylabel'))"
+                    checked>
+            <label id="hueylabel"for="huey">2</label>
             </div>
+
+            <div>
+            <input type="radio" id="dewey" name="drone" value="dewey"onclick="myFunction(document.getElementById('deweylabel'))">
+            <label id="deweylabel" for="dewey">5</label>
+            </div>
+
+            <div>
+            <input type="radio" id="louie" name="drone" value="louie"onclick="myFunction(document.getElementById('louielabel'))">
+            <label id="louielabel" for="louie">4</label>
+            </div>
+
+            <div>
+                <input type="radio" id="D" name="drone" value="dewey"onclick="myFunction(document.getElementById('Dlabel'))">
+                <label id="Dlabel" for="dewey">6</label>
+            </div>
+        </div>
+            
+        <div>
+            <button class="absende-button" onclick="window.location.href = 'Fußball1.html'">Weiter </button>
+        </div>
+             
+    </div>
+    <script>
+
+    let data = {
+        correct : "6",
+        answers : [
+            "5",
+            "4",
+            "2",
+            "6"
+        ],
+
+        };
+
+        function myFunction(elmnt) 
+        { 
+            console.log(data.answers[3]);
+            console.log(elmnt)
+            let gedrueckt = elmnt.textContent;
+            document.getElementById("D").disabled = true;
+            document.getElementById("huey").disabled = true;
+            document.getElementById("louie").disabled = true;
+            document.getElementById("dewey").disabled = true;
+            if (data.correct == gedrueckt){
+                console.log("erfolg");
+                clr = 'green';}
+            else{
+                console.log("leider falsch");
+                clr = 'red';}
+            
+            elmnt.style.color = clr;
+        
+            element = document.querySelector('input[id="dewey"]:checked');
+        }
+        </script>
 </body>
 </html>
