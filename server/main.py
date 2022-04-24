@@ -1,13 +1,13 @@
 import bottle
-
-
+import quizfragen
+import json
 
 
 
 @bottle.route("/")
 def index():
     with open("static/index.html") as file:
-        return bottle.template(file.read(),kategorien="")
+        return bottle.template(file.read(),kategorien=json.dumps(quizfragen.allekategorien()))
 
 @bottle.route("/init")
 @bottle.route("/init/")
@@ -18,7 +18,7 @@ def init():
     else:
         kategorie="allgemein"
     with open("static/init.html") as file:
-        return bottle.template(file.read(),datensatz="")
+        return bottle.template(file.read(),datensatz=json.dumps(quizfragen.fragenvon(kategorie)))
 
 
 @bottle.route("/frage")
