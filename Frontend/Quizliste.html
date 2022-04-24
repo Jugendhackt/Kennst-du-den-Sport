@@ -14,7 +14,7 @@
         <button  class="button font" onclick="window.location.href = 'Vollyball.html'">Vollyball-Quiz</button>
     </div>
 
-    
+
     <script>
 
         // definieren der Kategorien
@@ -23,7 +23,7 @@
 
 
         // beladen des LocalStorages
-        localStorage.setItem('sport_kat_length', sports_kat.length); 
+        localStorage.setItem('sport_kat_length', sports_kat.length);
         for (let i=0; i < sports_kat.length; ++i)
         {
             localStorage.setItem('sports_kat_'+i, sports_kat[i]);
@@ -36,7 +36,7 @@
         {
             let kat_name = localStorage.getItem('sports_kat_'+i)
             // testweise ausgabe der Kategorien des
-            console.log(`Kategorie ${i}: ${kat_name}`);
+            // console.log(`Kategorie ${i}: ${kat_name}`);
         }
 
 
