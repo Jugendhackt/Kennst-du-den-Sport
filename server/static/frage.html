@@ -7,69 +7,99 @@
     <title>Kennst du den Sport?</title>
 </head>
 <body>
-  <h1 id="fragetext">H</h1>
-  <input onclick="gecklickt(1);" id="a1" type="radio" name="dog" value="Dalmatiner"> 12<br> 
-<input onclick="gecklickt(2);" id="b1" type="radio" name="dog" value="Rottweiler"> 11<br>
-<input onclick="gecklickt(3);" id="c1" type="radio" name="dog" value="Dalmatiner"> 24<br> 
-<input onclick="gecklickt(4);" id="d1" type="radio" name="dog" value="Rottweiler"> 6<br>
-<button onclick="weiter();">Weiter</button>	
+    <h1 id="fragetext">H</h1>
+    <input onclick="gecklickt(1);" id="a1" type="radio" name="dog" value="Dalmatiner"> <p id="t1"></p><br>
+    <input onclick="gecklickt(2);" id="b1" type="radio" name="dog" value="Rottweiler"> <p id="t2"></p><br>
+    <input onclick="gecklickt(3);" id="c1" type="radio" name="dog" value="Dalmatiner"> <p id="t3"></p><br>
+    <input onclick="gecklickt(4);" id="d1" type="radio" name="dog" value="Rottweiler"> <p id="t4"></p><br>
+    <button onclick="weiter();">Weiter</button>
 <script>
 
- for (let i=0, iC=localStorage.length; i<iC; ++i) { 
-            let storageKey = localStorage.key(i);
-            let a = storageKey + ' , ' + localStorage.getItem(storageKey)
-           console.log( a);
-              document.querySelector('.button1').innerHTML = a ;
 
-        }
+    window.onload = function () {
+        document.unbeantwortet_json = localStorage.getItem("unbeantwortet");
+        document.unbeantwortet = JSON.parse(document.unbeantwortet_json);
+        PrintQuestion(LoadFromLocalStorage());
+    }
 
-var unbeantwortet = localStorage.getItem(unbeantwortet);
-var aktullefrage = localStorage;
+    function PrintQuestion(question)
+    {
+        document.getElementById("fragetext").innerHTML = question.text;
+
+        console.log(question);
+
+        document.getElementById("t1").innerHTML = question.loesung;
+        document.getElementById("t2").innerHTML = question.falsch[0];
+        document.getElementById("t3").innerHTML = question.falsch[1];
+        document.getElementById("t4").innerHTML = question.falsch[2];
+    }
+
+    function LoadFromLocalStorage()
+    {
+        let category_list = document.querySelector('#fragetext').innerHTML = document.unbeantwortet.frage;
+        let question = document.unbeantwortet[0];
+        return question;
+        console.log(question);
+    }
+
+
+//  for (let i=0, iC=localStorage.length; i<iC; ++i)
+//  {
+//     let storageKey = localStorage.key(i);
+//     let a = storageKey + ' , ' + localStorage.getItem(storageKey)
+//     console.log( a);
+//     document.querySelector('.button1').innerHTML = a ;
+// }
+
+// var unbeantwortet = localStorage.getItem(unbeantwortet);
+// var aktullefrage = localStorage;
 function weiter() {
-    if (unbeantwortet.length == 0){
+
+    localStorage.setItem('beantwortet', parseInt(localStorage.getItem('beantwortet')) + 1);
+    if (localStorage.getItem('beantwortet') == '10'){
         window.location.replace("/ergebnis")
     } else{
         window.location.replace("/frage")
     }
 }
-function gecklickt(nummber){
-    document.getElementById("a1").disabled = true;
-    document.getElementById("b1").disabled = true;
-    document.getElementById("c1").disabled = true;
-    document.getElementById("d1").disabled = true;
+// function gecklickt(nummber){
+//     document.getElementById("a1").disabled = true;
+//     document.getElementById("b1").disabled = true;
+//     document.getElementById("c1").disabled = true;
+//     document.getElementById("d1").disabled = true;
 
 
 
-    
-    let data = {
-        correct : "11",
-        answers : [
-            "12",
-            "11",
-            "24",
-            "6"
-        ],
 
-        };
+//     let data = {
+//         correct : "11",
+//         answers : [
+//             "12",
+//             "11",
+//             "24",
+//             "6"
+//         ],
 
-        function myFunction(elmnt) 
-        { 
-            (data.answers[1]);
-            localStorage.setItem(elmnt)
-            let gedrueckt = elmnt.textContent;
-            if (data.correct == gedrueckt){
-                localStorage.setItem("erfolg");
-                clr = 'lightgreen';}
-            else{
-                localStorage.setItem("leider falsch");
-                clr = 'red';}
-            
-            elmnt.style.color = clr;
-        
-            element = document.querySelector('input[id="a1"]:checked');
-        }
+//         };
 
-}
+//         function myFunction(elmnt)
+//         {
+//             (data.answers[1]);
+//             localStorage.setItem(elmnt)
+//             let gedrueckt = elmnt.textContent;
+//             if (data.correct == gedrueckt){
+//                 localStorage.setItem("erfolg");
+//                 clr = 'lightgreen';}
+//             else{
+//                 localStorage.setItem("leider falsch");
+//                 clr = 'red';}
+
+//             elmnt.style.color = clr;
+
+//             element = document.querySelector('input[id="a1"]:checked');
+//         }
+
+// }
 </script>
 </body>
 </html>
