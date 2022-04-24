@@ -9,22 +9,59 @@
     <link rel="icon" type="image" sizes="16x16" href="/Frontend/image/balle-sport.png">
 </head>
 <body>
-    <div class="button1">
+    <div class="category_list">
         <button  class="button font" onclick="window.location.href = 'Fußball.html'">Fußball-Quiz</button>
         <button  class="button font" onclick="window.location.href = 'Vollyball.html'">Vollyball-Quiz</button>
     </div>
     <script>
-       
 
-        for (let i=0, iC=localStorage.length; i<iC; ++i) { 
-            let storageKey = localStorage.key(i);
-            let a = storageKey + ' , ' + localStorage.getItem(storageKey)
-           console.log( a);
-              document.querySelector('.button1').innerHTML = a ;
+        // definieren der Kategorien
+        var sports_kat = ["Eiskunstlauf", "Cricket", "Golf", "Fu\u00dfball", "Basketball", "Leichtatlethik", "Volleyball"]
+        // console.log(sports_kat);  // debug output
 
+
+        // beladen des LocalStorages
+        localStorage.setItem('sport_kat_length', sports_kat.length);
+        for (let i=0; i < sports_kat.length; ++i)
+        {
+            localStorage.setItem('sports_kat_'+i, sports_kat[i]);
         }
-     
-        
+
+        // testweise ausgabe der Kategorien des LacalStorage
+        let sports_kat_length = localStorage.getItem('sport_kat_length'); //variable für die länge der Kategorien definieren
+        console.log("länge der Kat: " + sports_kat_length);
+        for (let i=0; i < sports_kat_length; ++i)
+        {
+            let kat_name = localStorage.getItem('sports_kat_'+i)
+            // testweise ausgabe der Kategorien des
+            console.log(`Kategorie ${i}: ${kat_name}`);
+        }
+
+
+        // Ausgabe der Kategorien im HTML
+        //let sports_kat_length = localStorage.getItem('sport_kat_length')  //variable für die länge der Kategorien definieren
+
+        let category_list = document.querySelector('.category_list');
+
+        for (let i=0; i < sports_kat_length; ++i)
+        {
+            let kat_name = localStorage.getItem('sports_kat_'+i)
+            // Ausgabe der Kategorien im HTML
+            category_list.innerHTML = category_list.innerHTML + "\n" + `<button  class="button font" onclick="window.location.href = '${kat_name}.html'">${kat_name}</button>`
+            //document.write(`<button  class="button font" onclick="window.location.href = '${kat_name}.html'">${kat_name}</button>`);
+        }
+
+
+        // for (let i=0, iC=localStorage.length; i<iC; ++i)
+        // {
+        //     let storageKey = localStorage.key(i);
+        //     let a = storageKey + ' , ' + localStorage.getItem(storageKey)
+        //    console.log( a);
+        //       document.querySelector('.button1').innerHTML = a ;
+
+        // }
+
+
         </script>
 </body>
 </html>
