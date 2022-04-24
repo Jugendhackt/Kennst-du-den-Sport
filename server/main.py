@@ -12,7 +12,7 @@ def index():
 @bottle.route("/init")
 @bottle.route("/init/")
 def init():
-    
+
     if "kategorie" in bottle.request.query:
         kategorie=bottle.request.query.kategorie
     else:
@@ -26,6 +26,13 @@ def init():
 def frage():
     with open("static/frage.html") as file:
         return file.read()
+
+@bottle.route("/balle-sport.png")
+@bottle.route("/balle-sport.png/")
+def frage():
+    with open("static/balle-sport.png") as file:
+        return file.read()
+
 
 @bottle.route("/main.css")
 @bottle.route("/main.css/")

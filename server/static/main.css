@@ -1,45 +1,84 @@
-.box{ 
-  background-color: rgb(55, 163, 199);
-    box-shadow: 4px 4px 8px black;
-     Padding: 20px; margin-top:50px;
-      border-radius: 15px 15px 15px 15px;
-       border: 1px; Height: 300px; Width: 250px; margin-right:  auto; text-align: center; 
+body
+{
+  background-color: rgb(210, 237, 247);
 }
 
-.website{
-display: flex;
-justify-content: center;
+header
+{
+  display: flex;
+  justify-content: center;
+  background-color: #fcfcf8;
+  width: 100vw;
 }
-.absende-button{
+
+.box
+{
+  background-color: rgb(55, 163, 199);
+  box-shadow: 4px 4px 8px black;
+  Padding: 20px; margin-top:50px;
+  border-radius: 15px 15px 15px 15px;
+  border: 1px;
+  Height: 300px;
+  Width: 250px;
+  text-align: center;
+  margin: auto;
+}
+
+.absende-button
+{
   margin-top: 0.6em;
   height: 1cm;
   width: 3cm;
 }
 
-.java{
+.java
+{
   height: 1cm;
   width: 3cm;
 }
-.quizliste{
+
+.quizliste
+{
   width: 3cm;
   height: 1cm;
   background-color: rgb(55, 163, 199);
 }
-.img{
+.img
+{
   display: flex;
   justify-content: center;
-  
 }
-.backroundcolor{
-  
-  
-}
-.button{
-  width: 30cm;
+
+.button
+{
+  width: 6cm;
   height: 2cm;
   background-color: rgb(55, 163, 199);
+  border-radius: 20px;
 }
-.button1{
+
+.category_list
+{
   display: flex;
-  justify-content;
+
+}
+.backroundcolor{
+  background-color: rgb(55, 163, 199);
+}
+
+.button-font{
+border-radius: 20px;
+}
+
+.img1{
+  width: 40%;
+  height: 10%;
+}
+
+footer
+{
+    background-color: #fcfcf8;
+    position: fixed;
+    bottom: 0%;
+    width: 100vw;
 }
