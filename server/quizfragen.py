@@ -46,7 +46,7 @@ def fragenvon(kategorie):
     return UpdatedList
 
 '''
-Was macht die Funktion: Schaut in Datenbank und analysiert was es für verschiedene Kategorien vorhanden sind. Sie gibt alle Kategorien wieder.
+Was macht die Funktion: Schaut in Datenbank und analysiert was für verschiedene Kategorien vorhanden sind. Sie gibt alle Kategorien wieder.
 '''
 
 def allekategorien():

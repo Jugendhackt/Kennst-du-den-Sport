@@ -4,7 +4,6 @@ import json
 
 
 
-
 @bottle.route("/")
 def index():
     with open("static/index.html") as file:
@@ -13,19 +12,25 @@ def index():
 @bottle.route("/init")
 @bottle.route("/init/")
 def init():
-
+    
     if "kategorie" in bottle.request.query:
         kategorie=bottle.request.query.kategorie
     else:
-        kategorie="allgemein"
+        kategorie=""
     with open("static/init.html") as file:
-        return bottle.template(file.read(),datensatz="")
+        return bottle.template(file.read(),datensatz=json.dumps(quizfragen.fragenvon(kategorie)))
 
 
 @bottle.route("/frage")
 @bottle.route("/frage/")
 def frage():
     with open("static/frage.html") as file:
+        return file.read()
+
+@bottle.route("/main.css")
+@bottle.route("/main.css/")
+def frage():
+    with open("static/main.css.html") as file:
         return file.read()
 
 
