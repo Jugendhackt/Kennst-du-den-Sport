@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kennst du den Sport?</title>
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="/Frontend/CSS/main.css">
+    <link rel="stylesheet" href="/Frontend/CSS/footer.css">
     <link rel="text/javascript" href="js/localstorage.js">
-    <link rel="icon" type="image" sizes="16x16" href="image/balle-sport.png">
+    <link rel="icon" type="image" sizes="16x16" href="/Frontend/image/balle-sport.png">
+
     <script>
        window.onload = function () {
         document.sports_kat = LoadCatagories();
@@ -70,21 +71,29 @@
     </script>
 </head>
 <body>
+    
     <header>
-        <h1>Kennst du den Sport?</h1>
+        <h1>Kennst du den Sport?
+            <hr>
+        </h1>
     </header>
+    
     <div class="category_list">
         <button  class="button font" onclick="window.location.replace('/init')">Alle</button>
     </div>
     <hr>
+    <div class="backroundcolor">
+    
     <div class="">
         <div class="img">
-            <img  src="/Frontend/image/Shutterstock_Lisa_Kolbasa.png">
+            <img class="img1"  src="/Frontend/image/Shutterstock_Lisa_Kolbasa.png">
+          
         </div>
     </div>
 
     <footer>
         <h5>Entwickelt und gestaltet von Nora, Emma, Paul, Lene, Yannick</h5>
     </footer>
+    </div>
 </body>
 </html>

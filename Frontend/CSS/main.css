@@ -51,12 +51,26 @@ header
 
 .button
 {
-  width: 30cm;
+  width: 6cm;
   height: 2cm;
   background-color: rgb(55, 163, 199);
+  border-radius: 20px;
 }
 
 .category_list
 {
   display: flex;
+  
+}
+.backroundcolor{
+  background-color: rgb(55, 163, 199);
+}
+
+.button-font{
+border-radius: 20px;
+}
+
+.img1{
+  width: 40%;
+  height: 10%;
 }

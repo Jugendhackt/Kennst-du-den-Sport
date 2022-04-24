@@ -3,7 +3,7 @@
     box-shadow: 4px 4px 8px black;
      Padding: 20px; margin-top:50px;
       border-radius: 15px 15px 15px 15px;
-       border: 1px; Height: 300px; Width: 250px; margin-right: ; auto; text-align: center; 
+       border: 1px; Height: 300px; Width: 250px; margin-right:  auto; text-align: center; 
 }
 
 .website{
@@ -41,5 +41,5 @@ justify-content: center;
 }
 .button1{
   display: flex;
-  justify-content:;
+  justify-content;
 }
