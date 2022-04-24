@@ -16,7 +16,7 @@ def init():
     if "kategorie" in bottle.request.query:
         kategorie=bottle.request.query.kategorie
     else:
-        kategorie="allgemein"
+        kategorie=""
     with open("static/init.html") as file:
         return bottle.template(file.read(),datensatz=json.dumps(quizfragen.fragenvon(kategorie)))
 
@@ -25,6 +25,12 @@ def init():
 @bottle.route("/frage/")
 def frage():
     with open("static/frage.html") as file:
+        return file.read()
+
+@bottle.route("/main.css")
+@bottle.route("/main.css/")
+def frage():
+    with open("static/main.css.html") as file:
         return file.read()
 
 
